@@ -1,4 +1,4 @@
-import LAB3.Account;
+package LAB3;
 
 public class AccountRunner {
     

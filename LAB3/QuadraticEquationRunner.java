@@ -1,3 +1,5 @@
+
+package LAB3;
 public class QuadraticEquationRunner {
     
 

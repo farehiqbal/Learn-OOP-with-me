@@ -1,3 +1,4 @@
+package LAB3;
 public class University {
     
     String uniName;
