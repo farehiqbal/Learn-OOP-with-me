@@ -2,32 +2,26 @@ package Project.Products;
 
 import Project.Utils.Date;
 
-public class Chicken extends Meat{
+public class Apple extends Fruit{
     
-    public Chicken(){
-        this.name = "Chicken";
+    public Apple(){
+        this.name = "Apple";
     }
-
-
-    public Chicken(String name){
+    public Apple(String name){
         this.name = name;
     }
-
-    public Chicken(double _weight, Date date, double _price){
+    public Apple(double _weight, Date date, double _price){
         super(_weight, date);
         this.price = _price;
     }
 
     public String getDescription(){
-        return "Chicken breast";
+        return "Apples are red";
     }
 
     @Override
     public String toString() {
-        return "Chicken";
+        return "Apples";
     }
-
-
-    
 
 }

@@ -1,12 +1,13 @@
-package Project;
+package Project.Panels;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import Project.Components.*;
+import Project.Forms.CustomerRegistration;
 
 
-public class LoginForm extends JFrame {
+public class LoginPanel extends JFrame {
 
   private CustomButton adminButton;
   private CustomButton managerButton;
@@ -19,7 +20,7 @@ public class LoginForm extends JFrame {
   private CustomButton regButton;
   
 
-  public LoginForm() {
+  public LoginPanel() {
     // Set up the frame
     setTitle("Login");
     setSize(400, 200);
@@ -75,29 +76,29 @@ public class LoginForm extends JFrame {
 
     public void actionPerformed(ActionEvent ev){
 
-      if(ev.getActionCommand().equals("Admin Login")){
-          
-          if(usernameField.getText().equals("admin") && passwordField.getText().equals("admin123")){
-              AdminPanel admin = new AdminPanel();
-              // admin.isAlwaysOnTop();
-              dispose();
-          }
-          else{
-            JOptionPane.showMessageDialog(null, "Wrong credentials!");
-          }
+        if(ev.getActionCommand().equals("Admin Login")){
+            
+            if(usernameField.getText().equals("admin") && passwordField.getText().equals("admin123")){
+                AdminPanel admin = new AdminPanel();
+                // admin.isAlwaysOnTop();
+                dispose();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Wrong credentials!");
+            }
         }
 
-      if(ev.getActionCommand().equals("Manager Login")){
+        if(ev.getActionCommand().equals("Manager Login")){
 
-      }
+        }
 
-      if(ev.getActionCommand().equals("Customer Login")){
+        if(ev.getActionCommand().equals("Customer Login")){
 
-      }
+        }
 
-      if(ev.getActionCommand().equals("Register new Customer")){
-        CustomerRegistration reg = new CustomerRegistration();
-      }
+        if(ev.getActionCommand().equals("Register new Customer")){
+            CustomerRegistration reg = new CustomerRegistration();
+        }
     }
   }
   

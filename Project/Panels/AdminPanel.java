@@ -1,4 +1,4 @@
-package Project;
+package Project.Panels;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +17,7 @@ public class AdminPanel extends JFrame{
     private JPasswordField passwordField;
     private JTextField locationField;
 
-    AdminPanel(){
+    public AdminPanel(){
         setTitle("Login");
         setSize(400, 400);
         setLocationRelativeTo(null);

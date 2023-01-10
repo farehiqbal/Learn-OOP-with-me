@@ -31,8 +31,6 @@ public class Customer extends User implements Serializable{
         this.cnic = cnic;
     }
 
-    
-
     public String getGender() {
         return gender;
     }
@@ -59,8 +57,7 @@ public class Customer extends User implements Serializable{
 
     @Override
     public String toString() {
-        return "Customer [cnic=" + cnic + ", pass=" + password + ", confirmPass=" + confirmPass + ", gender=" + gender
-                + ", address=" + address + ", phone=" + phone + "]";
+        return super.toString();
     }
 
     

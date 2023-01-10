@@ -45,7 +45,7 @@ public class Rectangle extends GeometricObject{
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(GeometricObject o) {
         if(this.equals(o)) {
             System.out.println("Both rectangles Are Same.");
             return 0;

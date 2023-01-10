@@ -1,6 +1,6 @@
 package AssignmentThree;
 
-public abstract class GeometricObject implements Cloneable, Comparable<Object>{
+public abstract class GeometricObject implements Cloneable, Comparable<GeometricObject>{
 
     private boolean isFilled;
     private String color;

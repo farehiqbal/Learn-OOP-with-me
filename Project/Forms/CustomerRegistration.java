@@ -1,13 +1,11 @@
-package Project;
+package Project.Forms;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.FileNotFoundException;
 
 import javax.swing.*;
 
 import Project.Components.*;
-import Project.Users.*;
 import Project.Users.Customer;
 import Project.Validations.*;
 import Project.FileHandling.*;

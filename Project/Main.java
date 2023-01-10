@@ -1,9 +1,17 @@
 package Project;
 
+import java.util.ArrayList;
+import Project.Panels.LoginPanel;
+
 public class Main {
+
+    ArrayList<Store> stores;
     
+
     public static void main(String[] args) {
-        LoginForm loginForm = new LoginForm();
+
+        LoginPanel loginForm = new LoginPanel();
         loginForm.setVisible(true);
+
     }
 }

@@ -36,7 +36,7 @@ public class Circle extends GeometricObject{
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(GeometricObject o) {
         if(this.equals(o)) {
             System.out.println("Both circles are Same.");
             return 0;

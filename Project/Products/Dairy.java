@@ -2,19 +2,20 @@ package Project.Products;
 
 import Project.Utils.Date;
 
-public class Meat extends Food {
+public class Dairy extends Food {
      
     private double weight;
     private Date expiryDate;
 
-    public Meat() {
+    public Dairy() {
         type = GoodsType.PERISHABLE;
     }
 
-    public Meat(double weight, Date expire){
+    public Dairy(double weight, Date expiryDate){
+        
         this();
         this.weight = weight;
-        this.expiryDate = expire;
+        this.expiryDate = expiryDate;
     }
 
     public double getWeight() {
@@ -34,3 +35,4 @@ public class Meat extends Food {
     }
 
 }
+
