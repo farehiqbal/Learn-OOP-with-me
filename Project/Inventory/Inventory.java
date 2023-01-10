@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import Project.Products.*;
 
-public class Inventory implements Serializable {
+public class Inventory implements Serializable{
     
     HashMap<Product,Integer> inventory;
     
