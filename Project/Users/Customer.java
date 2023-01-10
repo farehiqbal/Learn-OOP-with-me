@@ -10,13 +10,14 @@ public class Customer extends User implements Serializable{
 
     }
 
-    public Customer(String cnic, String pass, String confirmPass, String gender, String address, long phone) {
+    public Customer(String cnic, String location, String pass, String confirmPass, String gender, String address, long phone) {
         this.cnic = cnic;
         this.password = pass;
         this.confirmPass = confirmPass;
         this.gender = gender;
         this.address = address;
         this.phone = phone;
+        this.location = location;
     }
 
     public Customer(String confirmPass) {
@@ -58,6 +59,14 @@ public class Customer extends User implements Serializable{
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     
