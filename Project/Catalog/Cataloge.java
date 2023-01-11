@@ -118,7 +118,7 @@ public class Cataloge implements Serializable{
 
     public static void main(String[] args) throws ClassNotFoundException, IOException {
         
-        // FileOperation<HashMap<Product,Boolean>> file = new FileOperation<HashMap<Product,Boolean>>("Project\\DataBase\\ProductCatalog");
+        FileOperation<HashMap<Product,Boolean>> file = new FileOperation<HashMap<Product,Boolean>>("Project\\DataBase\\ProductCatalog");
 
         // try {
         //     file.push(readyMadeCatalog());
@@ -126,9 +126,9 @@ public class Cataloge implements Serializable{
         //     e.printStackTrace();
         // }
 
-        Cataloge cataloge = new Cataloge();
-        Product apple = new Apple();
-        cataloge.removeFromCatalog(apple);
+        // Cataloge cataloge = new Cataloge();
+        // Product apple = new Apple();
+        // cataloge.removeFromCatalog(apple);
        
     }
 }
