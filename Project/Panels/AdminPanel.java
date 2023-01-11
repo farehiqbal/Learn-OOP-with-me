@@ -3,8 +3,6 @@ package Project.Panels;
 import javax.swing.*;
 
 import Project.Components.CustomButton;
-import Project.Components.CustomLabel;
-import Project.Components.CustomPanel;
 import Project.Forms.ManagerRegistration;
 
 import java.awt.*;
@@ -80,8 +78,8 @@ public class AdminPanel extends JFrame{
         }
     }
 
-    // public static void main(String[] args) {
-    //     AdminPanel adminPanel = new AdminPanel();
-    // }
+    public static void main(String[] args) {
+        AdminPanel adminPanel = new AdminPanel();
+    }
 
 }

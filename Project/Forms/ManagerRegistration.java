@@ -25,7 +25,7 @@ public class ManagerRegistration extends JFrame{
         setTitle("Manager Registration");
         setSize(450, 600);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         // setBackground(Color.BLACK);
         setVisible(true);
         setLayout(new BorderLayout());
