@@ -11,8 +11,8 @@ import Project.Validations.*;
 import Project.FileHandling.*;
 
 public class CustomerRegistration extends JFrame{
-    private CustomLabel cnicLabel, passwordLabel, confirmPasswordLabel, phoneLabel, addressLabel;
-    private CustomField cnicField, phoneField, addressField;
+    private CustomLabel cnicLabel, passwordLabel, confirmPasswordLabel, phoneLabel, addressLabel, locationLabel;
+    private CustomField cnicField, phoneField, addressField, locationField;
     private CustomField passwordField, confirmPasswordField;
     private JRadioButton maleButton, femaleButton;
     private ButtonGroup genderGroup;
@@ -43,6 +43,9 @@ public class CustomerRegistration extends JFrame{
         submitButton = new CustomButton("Submit");
         phoneField = new CustomField(15);
         addressField = new CustomField(30);
+        locationLabel = new CustomLabel("Location: ");
+        locationField = new CustomField(30);
+
         panel = new CustomPanel();
 
         maleButton.setBackground(Color.DARK_GRAY);
@@ -56,7 +59,7 @@ public class CustomerRegistration extends JFrame{
         
 
         // Lay out the widgets using a grid layout
-        panel.setLayout(new GridLayout(6, 2, 5, 5));
+        panel.setLayout(new GridLayout(7, 2, 5, 5));
         panel.setVisible(true);
         
         panel.add(cnicLabel);
@@ -65,6 +68,8 @@ public class CustomerRegistration extends JFrame{
         panel.add(passwordField);
         panel.add(confirmPasswordLabel);
         panel.add(confirmPasswordField);
+        panel.add(locationLabel);
+        panel.add(locationField);
         // add(genderLabel);
         panel.add(maleButton);
         panel.add(femaleButton);
@@ -102,10 +107,10 @@ public class CustomerRegistration extends JFrame{
                 // int phone = Integer.parseInt(phoneField.getText());
                 long phone = Long.parseLong(phoneField.getText());
                 String address = addressField.getText();
+                String location = locationField.getText();
 
-                Customer cust = new Customer(cnic, pass, c_pass, gender, address, phone);
+                Customer cust = new Customer(cnic,location, pass, c_pass, gender, address, phone);
 
-                
                 FileOperations.writeToFile(cust, "Project\\DataBase\\Customer.ser");
                 JOptionPane.showMessageDialog(null, "Customer Registered Successfully!");
                 
