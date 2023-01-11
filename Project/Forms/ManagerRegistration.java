@@ -92,16 +92,12 @@ public class ManagerRegistration extends JFrame{
 
                 String pass = passwordField.getText();
                 String location = locationField.getText();
-
-                // if(!Validate.passwordsMatch(pass, location)) return;
                 
                 String gender;
 
                 if(maleButton.isSelected()) gender = "Male";
                 else gender = "Female";
                 
-
-                // int phone = Integer.parseInt(phoneField.getText());
                 long phone = Long.parseLong(phoneField.getText());
                 String address = addressField.getText();
 
@@ -115,7 +111,7 @@ public class ManagerRegistration extends JFrame{
                     e.printStackTrace();
                 }
                 JOptionPane.showMessageDialog(null, "Manager Registered Successfully!");
-                
+                dispose();
                 System.out.println(manager.toString());
                 
             }

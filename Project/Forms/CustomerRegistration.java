@@ -2,6 +2,7 @@ package Project.Forms;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 import javax.swing.*;
 
@@ -24,7 +25,7 @@ public class CustomerRegistration extends JFrame{
         setTitle("Customer Registration");
         setSize(450, 600);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         // setBackground(Color.BLACK);
         setVisible(true);
         setLayout(new BorderLayout());
@@ -109,14 +110,23 @@ public class CustomerRegistration extends JFrame{
                 String address = addressField.getText();
                 String location = locationField.getText();
 
-                Customer cust = new Customer(cnic,location, pass, c_pass, gender, address, phone);
+                Customer customer = new Customer(cnic,location, pass, c_pass, gender, address, phone);
 
-                FileOperations.writeToFile(cust, "Project\\DataBase\\Customer.ser");
+                FileOperation<Customer> fileOperation = new FileOperation<>("Project\\DataBase\\Customer");
+                try {
+                    fileOperation.push(customer);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 JOptionPane.showMessageDialog(null, "Customer Registered Successfully!");
-                
-                System.out.println(cust.toString());
-                
+                dispose();
+                System.out.println(customer.toString());
+
             }
         }
+    }
+
+    public static void main(String[] args) {
+        CustomerRegistration customerRegistration = new CustomerRegistration();
     }
 }
