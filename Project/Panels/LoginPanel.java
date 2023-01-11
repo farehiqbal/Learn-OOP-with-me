@@ -3,8 +3,15 @@ package Project.Panels;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
 import Project.Components.*;
+import Project.FileHandling.FileOperation;
 import Project.Forms.CustomerRegistration;
+import Project.Users.Customer;
+import Project.Users.Manager;
 
 
 public class LoginPanel extends JFrame {
@@ -23,9 +30,10 @@ public class LoginPanel extends JFrame {
   public LoginPanel() {
     // Set up the frame
     setTitle("Login");
+    setVisible(true);
     setSize(400, 200);
     setLocationRelativeTo(null);
-    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
     // Create the panel and add the components
     panel = new CustomPanel();
@@ -89,11 +97,55 @@ public class LoginPanel extends JFrame {
         }
 
         if(ev.getActionCommand().equals("Manager Login")){
+          
+          String username = usernameField.getText();
+          String password = passwordField.getText();
 
+         
+          try {
+            FileOperation<ArrayList<Manager>> fileOperation = new FileOperation<>("Project\\DataBase\\Manager");
+
+            ArrayList<Manager> list;
+            list = fileOperation.pull();
+
+            for (Manager manager : list) {
+              if(manager.getCnic().equals(username) && manager.getPassword().equals(password)){
+
+                JOptionPane.showMessageDialog(null, "Welcome!");
+                
+              }
+            }
+
+          } catch (ClassNotFoundException | IOException e) {
+            
+            e.printStackTrace();
+          }
+          
         }
 
         if(ev.getActionCommand().equals("Customer Login")){
+          String username = usernameField.getText();
+          String password = passwordField.getText();
 
+         
+          try {
+            FileOperation<ArrayList<Customer>> fileOperation = new FileOperation<>("Project\\DataBase\\Customer");
+
+            ArrayList<Customer> list;
+            list = fileOperation.pull();
+
+            for (Customer customer: list) {
+              if(customer.getCnic().equals(username) && customer.getPassword().equals(password)){
+
+                JOptionPane.showMessageDialog(null, "Welcome!");
+                
+              }
+            }
+
+          } catch (ClassNotFoundException | IOException e) {
+            
+            e.printStackTrace();
+          }
         }
 
         if(ev.getActionCommand().equals("Register new Customer")){

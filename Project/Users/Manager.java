@@ -1,5 +1,10 @@
 package Project.Users;
 
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import Project.FileHandling.FileOperation;
 
 public class Manager extends User{
 
@@ -13,7 +18,8 @@ public class Manager extends User{
     }
 
     public Manager(String cnic, String pass, String location, String gender, String address, long phone) {
-        super(pass, gender, address, cnic, location, phone);
+        this.cnic = cnic;
+        
     }
 
 
@@ -24,6 +30,27 @@ public class Manager extends User{
     
     public String getLocation() {
         return location;
+    }
+
+    public String getCnic(){
+        return this.cnic;
+    }
+    
+
+    @Override
+    public String toString() {
+        return "Manager [ password=" + password + ", gender=" + gender + ", address=" + address
+        + ", cnic=" + cnic + ", phone=" + phone + "location= "+location +"]";
+    }
+
+    public static void createNewManager(Manager manager) throws IOException, ClassNotFoundException{
+       
+        FileOperation<ArrayList<Manager>> file = new FileOperation<>("Project\\DataBase\\Manager");
+        ArrayList<Manager> list = file.pull();
+
+        list.add(manager);
+        file.push(list);
+
     }
     
 }
