@@ -3,6 +3,7 @@ package Project.Forms;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -110,10 +111,15 @@ public class CustomerRegistration extends JFrame{
 
                 Customer customer = new Customer(cnic,location, pass, c_pass, gender, address, phone);
 
-                FileOperation<Customer> fileOperation = new FileOperation<>("Project\\DataBase\\Customer");
+                FileOperation<ArrayList<Customer>> fileOperation = new FileOperation<>("Project\\DataBase\\Customer");
                 try {
-                    fileOperation.push(customer);
+                    ArrayList<Customer> customers = fileOperation.pull();
+                    customers.add(customer);
+                    fileOperation.push(customers);
+                    
                 } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
                 JOptionPane.showMessageDialog(null, "Customer Registered Successfully!");

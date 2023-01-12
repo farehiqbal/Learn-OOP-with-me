@@ -3,6 +3,7 @@ package Project.Forms;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -103,13 +104,19 @@ public class ManagerRegistration extends JFrame{
 
                 Manager manager = new Manager(cnic, pass, location, gender, address, phone);
                 
-                // FileOperations.writeToFile(manager, "Project\\DataBase\\Manager.ser");
-                FileOperation<Manager> fileOperation = new FileOperation<>("Project\\DataBase\\Manager");
+                
+                FileOperation<ArrayList<Manager>> fileOperation = new FileOperation<>("Project\\DataBase\\Manager");
                 try {
-                    fileOperation.push(manager);
+                    ArrayList<Manager> customers = fileOperation.pull();
+                    customers.add(manager);
+                    fileOperation.push(customers);
+                    
                 } catch (IOException e) {
                     e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
                 }
+                
                 JOptionPane.showMessageDialog(null, "Manager Registered Successfully!");
                 dispose();
                 System.out.println(manager.toString());

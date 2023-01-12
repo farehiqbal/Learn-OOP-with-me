@@ -49,9 +49,11 @@ public class Inventory implements Serializable{
         inventory.entrySet().forEach(entry -> {
             System.out.println(entry.getKey() + " " + entry.getValue());
         });
+
     }
 
     public ArrayList<Product> getAvailableProducts(){
+
         ArrayList<Product> list = new ArrayList<>();
         for(Product i : inventory.keySet()){
             if(inventory.get(i) > 0){
@@ -85,6 +87,15 @@ public class Inventory implements Serializable{
 
     public void printStockOfProduct(Product product){
         System.out.println(inventory.get(product));
+    }
+
+    public String printMap() {
+
+        String keyValuePairs = "";
+        for (Product key : inventory.keySet()) {
+            keyValuePairs += key + ": " + inventory.get(key) + "\n";
+        }
+        return keyValuePairs;
     }
 
     public static HashMap<Product,Integer> readyMadeInventory(){

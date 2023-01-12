@@ -12,16 +12,16 @@ public class Runner {
         // Manager.createNewManager(new Manager("3310226831081", "password", "Lahore", "Male", "Lahori", 03157145660));
         FileOperation<ArrayList<Manager>> file = new FileOperation<>("Project\\DataBase\\Manager");
 
-        // ArrayList<Manager> list= new ArrayList<>();
+        ArrayList<Manager> list= new ArrayList<>();
 
-        // list.add(new Manager("Islamabad"));
+        list.add(new Manager("Islamabad"));
 
-        // file.push(list);
+        file.push(list);
 
-        ArrayList<Manager> list = file.pull();
+        // ArrayList<Manager> list = file.pull();
 
-        for (Manager manager : list) {
+        // for (Manager manager : list) {
             
-        }
+        // }
     }
 }

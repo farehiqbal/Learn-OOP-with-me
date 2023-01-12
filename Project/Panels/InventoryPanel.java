@@ -60,7 +60,19 @@ public class InventoryPanel extends JFrame{
             
             if(ev.getActionCommand().equals("Remove from Inventory")){
 
-            }
+// <<<<<<< HEAD
+// =======
+//                 try {
+                    // file.push(readyMadeInventory());
+                // } catch (Exception e) {
+                //     e.printStackTrace();
+                // }
+        
+                // Inventory inventory = new Inventory();
+//                 Product apple = new Apple();
+//                 inventory.removeFromInventory(apple, null);   
+// >>>>>>> ad4a42703341428b63f0c0fc7418d29e18ed5131
+//             }
 
             if(ev.getActionCommand().equals("Display Inventory")){
 

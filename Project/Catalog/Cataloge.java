@@ -90,6 +90,15 @@ public class Cataloge implements Serializable{
         this.cataloge = cataloge;
     }
 
+    public String printMap() {
+
+        String keyValuePairs = "";
+        for (Product key : cataloge.keySet()) {
+            keyValuePairs += key + ": " + cataloge.get(key) + "\n";
+        }
+        return keyValuePairs;
+    }
+
     public static HashMap<Product,Boolean> readyMadeCatalog(){
 
         HashMap<Product,Boolean> log = new HashMap<>();
