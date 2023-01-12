@@ -3,15 +3,9 @@ package Project.Panels;
 import javax.swing.*;
 
 import Project.Components.CustomButton;
-import Project.FileHandling.FileOperation;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.BufferedReader;
-import java.util.HashMap;
-import java.io.*;
-import Project.Products.*;
-import Project.Inventory.*;
 
 public class InventoryPanel extends JFrame{
     CustomButton addProductButton, removeProductButton, displayInventoryButton;
@@ -72,14 +66,14 @@ public class InventoryPanel extends JFrame{
 //                 Product apple = new Apple();
 //                 inventory.removeFromInventory(apple, null);   
 // >>>>>>> ad4a42703341428b63f0c0fc7418d29e18ed5131
-//             }
+            }
 
             if(ev.getActionCommand().equals("Display Inventory")){
 
             }
-        }
+        
+         }
     }
-
     public static void main(String[] args) {
         InventoryPanel inventoryPanel = new InventoryPanel();
     }

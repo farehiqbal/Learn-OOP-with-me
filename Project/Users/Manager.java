@@ -17,7 +17,8 @@ public class Manager extends User{
     }
 
     public Manager(String cnic, String pass, String location, String gender, String address, long phone) {
-        this.cnic = cnic;
+        super(cnic, pass, location, gender, address, phone);
+        
         
     }
 

@@ -7,17 +7,18 @@ import Project.FileHandling.FileOperation;
 
 public class Runner {
     public static void main(String[] args) throws IOException {
-        CustomerRegistration customerRegistration = new CustomerRegistration();
-        // ManagerRegistration managerRegistration = new ManagerRegistration();
+        
+        // CustomerRegistration customerRegistration = new CustomerRegistration();
+        ManagerRegistration managerRegistration = new ManagerRegistration();
 
-        FileOperation<ArrayList<Customer>> list = new FileOperation<>("Project\\DataBase\\Customer");
+        // FileOperation<ArrayList<Customer>> list = new FileOperation<>("Project\\DataBase\\Customer");
 
-    //     ArrayList<Customer> customers = new ArrayList<>();
+        // ArrayList<Customer> customers = new ArrayList<>();
 
-    //     Customer customer = new Customer("33102", "Pindi", "pass", "pass", "Male", "I8", 030032103012L);
-    //     customers.add(customer);
+        // Customer customer = new Customer("33102", "Pindi", "pass", "pass", "Male", "I8", 030032103012L);
+        // customers.add(customer);
 
-    //     list.push(customers);
+        // list.push(customers);
     
     }
 }

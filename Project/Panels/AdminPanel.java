@@ -4,9 +4,11 @@ import javax.swing.*;
 
 import Project.Components.CustomButton;
 import Project.Forms.ManagerRegistration;
+import Project.Utils.Stringifies;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 public class AdminPanel extends JFrame{
     
@@ -23,7 +25,7 @@ public class AdminPanel extends JFrame{
 
         panel = new JPanel(new GridLayout(3,3));
 
-        viewManagerButton = new CustomButton("View Manager");
+        viewManagerButton = new CustomButton("View Managers");
         registerManagerButton = new CustomButton("Register Manager");
         manageCustomerButton = new CustomButton("Manage Customer");
         productCatalogButton = new CustomButton("View Product Catalog");
@@ -57,8 +59,32 @@ public class AdminPanel extends JFrame{
 
         public void actionPerformed(ActionEvent ev){
 
-            if(ev.getActionCommand().equals("View Manager")){
+            if(ev.getActionCommand().equals("View Managers")){
+                
+                JFrame frame = new JFrame("Available Managers");
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setSize(550, 400);
+                frame.setLayout(new BorderLayout());
 
+                try {
+                    JTextArea textArea = new JTextArea();
+                    // textArea.setText("");
+                    textArea.setText(Stringifies.getManagers());
+                    textArea.setEditable(false);
+                   
+                    textArea.setFont(new Font("Arial", Font.PLAIN, 14));
+                    textArea.setSize(550,400);
+
+                    frame.add(textArea, BorderLayout.CENTER);
+                    frame.setVisible(true);
+
+                } catch (ClassNotFoundException | IOException e) {
+                    e.printStackTrace();
+                }
+                
+                
+
+                
             }
 
             if(ev.getActionCommand().equals("Register Manager")){
@@ -67,11 +93,19 @@ public class AdminPanel extends JFrame{
             }
             
             if(ev.getActionCommand().equals("Manage Customer")){
-
+                try {
+                    ManageCustomers manageCustomers = new ManageCustomers();
+                } catch (ClassNotFoundException | IOException e) {
+                    e.printStackTrace();
+                }
             }
             
             if(ev.getActionCommand().equals("View Product Catalog")){
-
+                try {
+                    ViewProductCatalog catalog = new ViewProductCatalog();
+                } catch (ClassNotFoundException | IOException e) {
+                    e.printStackTrace();
+                }
             }
 
             if(ev.getActionCommand().equals("View Stores")){
@@ -88,8 +122,9 @@ public class AdminPanel extends JFrame{
         }
     }
 
-    public static void main(String[] args) {
-        AdminPanel adminPanel = new AdminPanel();
+    public static void main(String[] args) throws ClassNotFoundException, IOException {
+        // AdminPanel adminPanel = new AdminPanel();
+        System.out.println(Stringifies.getManagers());
     }
 
 }

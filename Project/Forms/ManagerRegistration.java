@@ -103,7 +103,7 @@ public class ManagerRegistration extends JFrame{
                 String address = addressField.getText();
 
                 Manager manager = new Manager(cnic, pass, location, gender, address, phone);
-                
+                System.out.println(manager.toString());
                 
                 FileOperation<ArrayList<Manager>> fileOperation = new FileOperation<>("Project\\DataBase\\Manager");
                 try {
