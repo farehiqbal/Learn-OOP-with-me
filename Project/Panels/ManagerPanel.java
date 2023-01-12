@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class ManagerPanel extends JFrame{
-    CustomButton viewInventoryButton, logoutButton;
+    CustomButton viewInventoryButton, viewStoreButton, logoutButton;
     JPanel panel;
 
     ManagerPanel(){
@@ -19,15 +19,16 @@ public class ManagerPanel extends JFrame{
         setBackground(getForeground());
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        panel = new JPanel(new GridLayout(3,3));
+        panel = new JPanel(new GridLayout(2,2));
 
         viewInventoryButton = new CustomButton("View Inventory");
+
+        viewStoreButton = new CustomButton("View Store");
 
         logoutButton = new CustomButton("Logout");
 
         panel.add(viewInventoryButton);
-
-
+        panel.add(viewStoreButton);
         
 
         add(logoutButton,BorderLayout.SOUTH);
@@ -37,6 +38,8 @@ public class ManagerPanel extends JFrame{
 
         MyActionListener listener = new MyActionListener();
         viewInventoryButton.addActionListener(listener);
+
+        viewStoreButton.addActionListener(listener);
 
         logoutButton.addActionListener(listener);
 
@@ -50,6 +53,9 @@ public class ManagerPanel extends JFrame{
 
             }
             
+            if(ev.getActionCommand().equals("View Store")){
+
+            }
 
             if(ev.getActionCommand().equals("Logout")){
                 dispose();

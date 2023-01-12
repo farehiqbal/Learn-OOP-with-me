@@ -3,10 +3,15 @@ package Project.Panels;
 import javax.swing.*;
 
 import Project.Components.CustomButton;
+import Project.FileHandling.FileOperation;
 
 import java.awt.*;
 import java.awt.event.*;
-
+import java.io.BufferedReader;
+import java.util.HashMap;
+import java.io.*;
+import Project.Products.*;
+import Project.Inventory.*;
 
 public class InventoryPanel extends JFrame{
     CustomButton addProductButton, removeProductButton, displayInventoryButton;
@@ -55,11 +60,34 @@ public class InventoryPanel extends JFrame{
             
 
             if(ev.getActionCommand().equals("Remove from Inventory")){
-                
+                FileOperation<HashMap<Product,Boolean>> file = new FileOperation<HashMap<Product,Boolean>>("Project\\DataBase\\Inventory");
+
+                try {
+                    file.push(readyMadeInventory());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+        
+                Inventory inventory = new Inventory();
+                Product apple = new Apple();
+                inventory.removeFromInventory(apple, null);   
             }
 
             if(ev.getActionCommand().equals("Display Inventory")){
-                
+                // JFileChooser fileChooser = new JFileChooser();
+                // fileChooser.showOpenDialog(null);
+                // File file = new File("Project\\DataBase\\Inventory");
+                // String fileName = file.getAbsolutePath();
+
+                // try {
+                //     FileReader fileReader = new FileReader(fileName);
+                //     BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+
+                // } catch (Exception e) {
+                //     JOptionPane.showMessageDialog(null,e);
+                // }
+
             }
         }
     }

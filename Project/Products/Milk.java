@@ -19,6 +19,9 @@ public class Milk extends Dairy{
         this.description = description;
     }
 
+    public Milk(double _weight, double _price){
+        super(_weight,_price);
+    }
 
     @Override
     public String toString() {

@@ -17,6 +17,10 @@ public class Beef extends Meat{
         this.price = _price;
     }
 
+    public Beef(double _weight, double _price){
+        super(_weight,_price);
+    }
+
     public String getDescription(){
         return "Beef Meat!";
     }
