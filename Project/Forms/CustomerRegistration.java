@@ -99,13 +99,11 @@ public class CustomerRegistration extends JFrame{
                 String c_pass = confirmPasswordField.getText();
 
                 if(!Validate.passwordsMatch(pass, c_pass)) return;
+                
                 String gender;
-
                 if(maleButton.isSelected()) gender = "Male";
                 else gender = "Female";
                 
-
-                // int phone = Integer.parseInt(phoneField.getText());
                 long phone = Long.parseLong(phoneField.getText());
                 String address = addressField.getText();
                 String location = locationField.getText();
@@ -124,9 +122,5 @@ public class CustomerRegistration extends JFrame{
 
             }
         }
-    }
-
-    public static void main(String[] args) {
-        CustomerRegistration customerRegistration = new CustomerRegistration();
     }
 }

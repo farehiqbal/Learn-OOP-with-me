@@ -120,15 +120,15 @@ public class Cataloge implements Serializable{
         
         FileOperation<HashMap<Product,Boolean>> file = new FileOperation<HashMap<Product,Boolean>>("Project\\DataBase\\ProductCatalog");
 
-        // try {
-        //     file.push(readyMadeCatalog());
-        // } catch (Exception e) {
-        //     e.printStackTrace();
-        // }
+        try {
+            file.push(readyMadeCatalog());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        // Cataloge cataloge = new Cataloge();
-        // Product apple = new Apple();
-        // cataloge.removeFromCatalog(apple);
+        Cataloge cataloge = new Cataloge();
+        Product apple = new Apple();
+        cataloge.removeFromCatalog(apple);
        
     }
 }

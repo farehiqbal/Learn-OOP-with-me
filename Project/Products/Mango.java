@@ -17,6 +17,10 @@ public class Mango extends Fruit{
         this.price = _price;
     }
 
+    public Mango(double _weight, double _price){
+        super(_weight,_price);
+    }
+
     public String getDescription(){
         return "Mangoes are love!";
     }

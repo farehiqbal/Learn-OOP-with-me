@@ -18,6 +18,10 @@ public class Fish extends Meat{
         this.description = description;
     }
 
+    public Fish(double _weight, double _price){
+        super(_weight,_price);
+    }
+
 
     @Override
     public String toString() {

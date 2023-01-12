@@ -17,6 +17,10 @@ public class Mutton extends Meat{
         this.price = _price;
     }
 
+    public Mutton(double _weight, double _price){
+        super(_weight,_price);
+    }
+
     public String getDescription(){
         return "Mutton pieces!";
     }

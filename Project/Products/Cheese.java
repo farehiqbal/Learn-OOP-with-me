@@ -18,6 +18,10 @@ public class Cheese extends Dairy{
         this.description = description;
     }
 
+    public Cheese(double _weight, double _price){
+        super(_weight,_price);
+    }
+
 
     @Override
     public String toString() {

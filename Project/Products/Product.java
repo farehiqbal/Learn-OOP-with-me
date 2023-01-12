@@ -7,6 +7,7 @@ public abstract class Product implements Serializable{
     protected String name;
     protected double price;
     protected String description;
+    protected double weight;
     
     public double getPrice() {
         return price;
@@ -22,6 +23,22 @@ public abstract class Product implements Serializable{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
     @Override
@@ -53,16 +70,5 @@ public abstract class Product implements Serializable{
             return false;
         return true;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-
     
 }

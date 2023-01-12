@@ -18,6 +18,10 @@ public class Chicken extends Meat{
         this.price = _price;
     }
 
+    public Chicken(double _weight, double _price){
+        super(_weight,_price);
+    }
+
     public String getDescription(){
         return "Chicken breast";
     }

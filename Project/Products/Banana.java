@@ -17,6 +17,10 @@ public class Banana extends Fruit{
         this.price = _price;
     }
 
+    public Banana(double _weight, double _price){
+        super(_weight,_price);
+    }
+
     public String getDescription(){
         return "Banana are sold in dozens";
     }

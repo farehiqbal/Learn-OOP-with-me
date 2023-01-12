@@ -4,7 +4,6 @@ import Project.Utils.Date;
 
 public class Fruit extends Food{
     
-    private double weight;
     protected Date expiryDate;
 
     
@@ -18,12 +17,9 @@ public class Fruit extends Food{
         this.expiryDate = expire;
     }
 
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public Fruit(double _weight, double _price){
+        this.weight = _weight;
+        this.price = _price;
     }
 
     public Date getExpiryDate() {

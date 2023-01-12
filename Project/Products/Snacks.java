@@ -12,6 +12,11 @@ public class Snacks extends Food{
         this.weight = weight;
     }
 
+    public Snacks(double _weight, double _price){
+        this.weight = _weight;
+        this.price = _price;
+    }
+
     public double getWeight() {
         return weight;
     }
