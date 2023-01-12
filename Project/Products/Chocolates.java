@@ -10,8 +10,7 @@ public class Chocolates extends Snacks{
         this.name = name;
     }
     public Chocolates(double _weight, double _price){
-        super(_weight);
-        this.price = _price;
+        super(_weight, _price);
     }
 
     public String getDescription(){

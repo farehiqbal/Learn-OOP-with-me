@@ -58,35 +58,23 @@ public class InventoryPanel extends JFrame{
 
             }
             
-
             if(ev.getActionCommand().equals("Remove from Inventory")){
-                FileOperation<HashMap<Product,Boolean>> file = new FileOperation<HashMap<Product,Boolean>>("Project\\DataBase\\Inventory");
 
-                try {
+// <<<<<<< HEAD
+// =======
+//                 try {
                     // file.push(readyMadeInventory());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                // } catch (Exception e) {
+                //     e.printStackTrace();
+                // }
         
-                Inventory inventory = new Inventory();
-                Product apple = new Apple();
-                inventory.removeFromInventory(apple, null);   
-            }
+                // Inventory inventory = new Inventory();
+//                 Product apple = new Apple();
+//                 inventory.removeFromInventory(apple, null);   
+// >>>>>>> ad4a42703341428b63f0c0fc7418d29e18ed5131
+//             }
 
             if(ev.getActionCommand().equals("Display Inventory")){
-                // JFileChooser fileChooser = new JFileChooser();
-                // fileChooser.showOpenDialog(null);
-                // File file = new File("Project\\DataBase\\Inventory");
-                // String fileName = file.getAbsolutePath();
-
-                // try {
-                //     FileReader fileReader = new FileReader(fileName);
-                //     BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-
-                // } catch (Exception e) {
-                //     JOptionPane.showMessageDialog(null,e);
-                // }
 
             }
         }

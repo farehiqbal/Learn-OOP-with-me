@@ -1,7 +1,6 @@
 package Project.Users;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import Project.FileHandling.FileOperation;
@@ -21,21 +20,6 @@ public class Manager extends User{
         this.cnic = cnic;
         
     }
-
-
-
-    public void setLocation(String location){
-        this.location = location;
-    }
-    
-    public String getLocation() {
-        return location;
-    }
-
-    public String getCnic(){
-        return this.cnic;
-    }
-    
 
     @Override
     public String toString() {

@@ -17,7 +17,7 @@ public class Shampoo extends PersonalHygiene{
     }
 
     public Shampoo(double _weight, double _price){
-        super();
+        this.weight = _weight;
         this.price = _price;
     }
 
