@@ -43,6 +43,15 @@ public class OnlineShopping {
         });
     }
 
+    public String printMap() {
+
+        String keyValuePairs = "";
+        for (Product key : cart.keySet()) {
+            keyValuePairs += key + ": " + cart.get(key) + "\n";
+        }
+        return keyValuePairs;
+    }
+
     public Store getNearestStore() throws ClassNotFoundException, IOException{
         
         String custlocation = customer.getLocation();
