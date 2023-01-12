@@ -19,11 +19,11 @@ public class TextAreaExample {
 
         Inventory inventory = new Inventory(10);
         // Create a new JTextArea with the text "Hello, World!"
-        JTextArea textArea = new JTextArea();
-        textArea.setSize(400,1000);
-        textArea.setText(inventory.printMap());
-        textArea.setEditable(false);
-
+        // JTextArea textArea = new JTextArea();
+        // textArea.setSize(400,1000);
+        // textArea.setText(inventory.printMap());
+        // textArea.setEditable(false);
+        JTextField textArea = new JTextField(inventory.printMap());
         // Add the text area to the panel
         // panel.add(textArea);
 
