@@ -21,21 +21,6 @@ public class Manager extends User{
         
     }
 
-
-
-    public void setLocation(String location){
-        this.location = location;
-    }
-    
-    public String getLocation() {
-        return location;
-    }
-
-    public String getCnic(){
-        return this.cnic;
-    }
-    
-
     @Override
     public String toString() {
         return "Manager [ password=" + password + ", gender=" + gender + ", address=" + address

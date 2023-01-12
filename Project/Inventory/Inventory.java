@@ -25,6 +25,13 @@ public class Inventory implements Serializable{
         inventory.put(new Eggs("Eggs"), preSetQuantity);
         inventory.put(new Fish("Fish"), preSetQuantity);
         inventory.put(new Mango("Mango"), preSetQuantity);
+        inventory.put(new Milk("Milk"), preSetQuantity);
+        inventory.put(new Mutton("Mutton"), preSetQuantity);
+        inventory.put(new Rice("Rice"), preSetQuantity);
+        inventory.put(new Shampoo("Shampoo"), preSetQuantity);
+        inventory.put(new Soap("Soap"), preSetQuantity);
+        inventory.put(new Wheat("Wheat"), preSetQuantity);
+        inventory.put(new Yogurt("Yogurt"), preSetQuantity);
     }
     
 
@@ -94,6 +101,13 @@ public class Inventory implements Serializable{
         log.put(new Eggs("Eggs"), 10);
         log.put(new Fish("Fish"), 10);
         log.put(new Mango("Mango"), 10);
+        log.put(new Milk("Milk"), 10);
+        log.put(new Mutton("Mutton"), 10);
+        log.put(new Rice("Rice"), 10);
+        log.put(new Shampoo("Shampoo"), 10);
+        log.put(new Soap("Soap"), 10);
+        log.put(new Wheat("Wheat"), 10);
+        log.put(new Yogurt("Yogurt"), 10);
 
         return log;
     }

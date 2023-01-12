@@ -38,12 +38,9 @@ public class AdminPanel extends JFrame{
         panel.add(viewStoreButton);
         panel.add(addStoreButton);
 
-        
-
         add(logoutButton,BorderLayout.SOUTH);
     
         add(panel,BorderLayout.CENTER);
-
 
         MyActionListener listener = new MyActionListener();
         viewManagerButton.addActionListener(listener);

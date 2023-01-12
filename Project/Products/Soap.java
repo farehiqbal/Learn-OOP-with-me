@@ -15,6 +15,10 @@ public class Soap extends PersonalHygiene{
         this.description = description;
     }
     
+    public Soap(double _weight, double _price){
+        this.weight = _weight;
+        this.price = _price;
+    }
 
     @Override
     public String toString() {

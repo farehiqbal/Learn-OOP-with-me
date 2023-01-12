@@ -24,36 +24,12 @@ public class Customer extends User implements Serializable{
         this.location = location;
     }
 
-    public String getCnic() {
-        return cnic;
+    public String getConfirmPass() {
+        return confirmPass;
     }
 
-    public void setCnic(String cnic) {
-        this.cnic = cnic;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public long getPhone() {
-        return phone;
-    }
-
-    public void setPhone(long phone) {
-        this.phone = phone;
+    public void setConfirmPass(String confirmPass) {
+        this.confirmPass = confirmPass;
     }
 
     @Override
@@ -61,15 +37,4 @@ public class Customer extends User implements Serializable{
         return super.toString();
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    
-    
-    
 }
