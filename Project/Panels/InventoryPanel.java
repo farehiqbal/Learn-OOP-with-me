@@ -63,7 +63,7 @@ public class InventoryPanel extends JFrame{
                 FileOperation<HashMap<Product,Boolean>> file = new FileOperation<HashMap<Product,Boolean>>("Project\\DataBase\\Inventory");
 
                 try {
-                    file.push(readyMadeInventory());
+                    // file.push(readyMadeInventory());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
