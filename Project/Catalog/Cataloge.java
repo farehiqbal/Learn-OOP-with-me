@@ -2,7 +2,6 @@ package Project.Catalog;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
 import Project.FileHandling.FileOperation;
 import Project.Products.*;
