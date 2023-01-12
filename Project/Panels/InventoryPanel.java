@@ -55,7 +55,17 @@ public class InventoryPanel extends JFrame{
         public void actionPerformed(ActionEvent ev){
 
             if(ev.getActionCommand().equals("Add to Inventory")){
+                FileOperation<HashMap<Product,Boolean>> file = new FileOperation<HashMap<Product,Boolean>>("Project\\DataBase\\Inventory");
 
+                try {
+                    file.push(readyMadeInventory());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+        
+                Inventory inventory = new Inventory();
+                Product apple = new Apple();
+                inventory.addIntoInventory(apple, null); 
             }
             
 
