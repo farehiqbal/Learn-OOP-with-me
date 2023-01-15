@@ -166,7 +166,7 @@ public class Store implements Serializable{
     }
 
     public static void main(String[] args) throws ClassNotFoundException, IOException {
-        System.out.println(Store.findFromStore("Fish").toString());
+        // System.out.println(Store.findFromStore("Fish").toString());
     
         // Store maxStore = null;
 
