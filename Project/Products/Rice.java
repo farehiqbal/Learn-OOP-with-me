@@ -11,8 +11,9 @@ public class Rice extends Grains{
         this.name = name;
     }
 
-    public Rice(double _weight, double _price){
+    public Rice(String name,double _weight, double _price){
         super(_weight,_price);
+        this.name = name;
     }
 
     public String getDescription(){

@@ -12,13 +12,16 @@ public class Mango extends Fruit{
         this.name = name;
     }
 
-    public Mango(double _weight, Date date, double _price){
+    public Mango(String name, double _weight, Date date, double _price){
         super(_weight, date);
         this.price = _price;
+        this.name = name;
     }
 
-    public Mango(double _weight, double _price){
+    public Mango(String name, double _weight, double _price){
         super(_weight,_price);
+        this.name = name;
+
     }
 
     public String getDescription(){

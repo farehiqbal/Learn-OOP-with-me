@@ -11,9 +11,10 @@ public class Shampoo extends PersonalHygiene{
         this.name = name;
     }
 
-    public Shampoo(double _price, String description){
+    public Shampoo(String name, double _weight, double _price){
+        this.weight = _weight;
         this.price = _price;
-        this.description = description;
+        this.name = name;
     }
 
     public Shampoo(double _weight, double _price){

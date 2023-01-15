@@ -12,15 +12,16 @@ public class Yogurt extends Dairy{
         this.name = name;
     }
 
-    public Yogurt(double _weight, Date date, double _price, String description){
+    public Yogurt(String name,double _weight, Date date, double _price){
         
         super(_weight, date);
         this.price = _price;
-        this.description = description;
+        this.name = name;
     }
 
-    public Yogurt(double _weight, double _price){
+    public Yogurt(String name,double _weight, double _price){
         super(_weight,_price);
+        this.name = name;
     }
 
     @Override

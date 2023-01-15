@@ -7,11 +7,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Project.Store;
 import Project.Components.*;
 import Project.FileHandling.FileOperation;
 import Project.Forms.CustomerRegistration;
 import Project.Users.Customer;
 import Project.Users.Manager;
+import Project.Validations.Validate;
 
 
 public class LoginPanel extends JFrame {
@@ -104,15 +106,26 @@ public class LoginPanel extends JFrame {
          
           try {
             FileOperation<ArrayList<Manager>> fileOperation = new FileOperation<>("Project\\DataBase\\Manager");
-
+            FileOperation<ArrayList<Store>> storeFile = new FileOperation<>("Project\\DataBase\\Store");
+            ArrayList<Store> storeList = storeFile.pull();
             ArrayList<Manager> list;
             list = fileOperation.pull();
-
+            Manager tempManager = null;
+            Store tempStore =null;
             for (Manager manager : list) {
               if(manager.getCnic().equals(username) && manager.getPassword().equals(password)){
-
-                JOptionPane.showMessageDialog(null, "Welcome!");
+                  tempManager = manager;
+                  Store s = Validate.checkForStore(username, manager.getLocation());
+                  
+                  if(s != null){
+                    tempStore = s;
+                }
                 
+                JOptionPane.showMessageDialog(null, "Welcome!");
+                System.out.println(tempManager.toString());
+                System.out.println(tempStore.toString());
+                ManagerPanel panel = new ManagerPanel(tempStore);
+                break;
               }
             }
 
@@ -135,10 +148,12 @@ public class LoginPanel extends JFrame {
             list = fileOperation.pull();
 
             for (Customer customer: list) {
+              Customer tempCustomer = null;
               if(customer.getCnic().equals(username) && customer.getPassword().equals(password)){
-
+                tempCustomer = customer;
                 JOptionPane.showMessageDialog(null, "Welcome!");
-                
+                System.out.println(tempCustomer.toString());
+                CustomerPanel customerPanel = new CustomerPanel(tempCustomer);
               }
             }
 

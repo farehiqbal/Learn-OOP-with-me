@@ -15,25 +15,28 @@ public class Inventory implements Serializable{
 
     public Inventory(Integer preSetQuantity){
         this();
-        inventory.put(new Apple("Apple"), preSetQuantity);
-        inventory.put(new Banana("Banana"), preSetQuantity);
-        inventory.put(new Beef("Beef"), preSetQuantity);
-        inventory.put(new Biscuits("Biscuits"), preSetQuantity);
-        inventory.put(new Cheese("Cheese"), preSetQuantity);
-        inventory.put(new Chicken("Chicken"), preSetQuantity);
-        inventory.put(new Chocolates("Chocolates"), preSetQuantity);
-        inventory.put(new Eggs("Eggs"), preSetQuantity);
-        inventory.put(new Fish("Fish"), preSetQuantity);
-        inventory.put(new Mango("Mango"), preSetQuantity);
-        inventory.put(new Milk("Milk"), preSetQuantity);
-        inventory.put(new Mutton("Mutton"), preSetQuantity);
-        inventory.put(new Rice("Rice"), preSetQuantity);
-        inventory.put(new Shampoo("Shampoo"), preSetQuantity);
-        inventory.put(new Soap("Soap"), preSetQuantity);
-        inventory.put(new Wheat("Wheat"), preSetQuantity);
-        inventory.put(new Yogurt("Yogurt"), preSetQuantity);
+        inventory.put(new Apple("Apple",1.0,200.0),preSetQuantity);
+        inventory.put(new Banana("Banana",12.0,120.0),preSetQuantity);
+        inventory.put(new Beef("Beef",1.0,600.0),preSetQuantity);
+        inventory.put(new Biscuits("Biscuits",24.0,240.0),preSetQuantity);
+        inventory.put(new Cheese("Biscuits",1.0,1200.00),preSetQuantity);
+        inventory.put(new Chicken("Chicken",1.0,400.0),preSetQuantity);
+        inventory.put(new Chocolates("Chocolates",1.0,250.0),preSetQuantity);
+        inventory.put(new Eggs("Eggs",12.0,360.0),preSetQuantity);
+        inventory.put(new Fish("Fish",1.0,500.0),preSetQuantity);
+        inventory.put(new Mango("Mango",1.0,200.0),preSetQuantity);
+        inventory.put(new Milk("Milk",1.0,180.0),preSetQuantity);
+        inventory.put(new Mutton("Mutton",1.0,1400.0),preSetQuantity);
+        inventory.put(new Rice("Rice",1.0,220.0),preSetQuantity);
+        inventory.put(new Shampoo("Shampoo",1.0,450.0),preSetQuantity);
+        inventory.put(new Soap("Soap",1.0,110.0),preSetQuantity);
+        inventory.put(new Wheat("Wheat",1.0,960.0),preSetQuantity);
+        inventory.put(new Yogurt("Yogurt",1.0,210.0),preSetQuantity);
+
     }
-    
+    public Integer getQuantity(Product product){
+        return inventory.get(product);
+    }
 
     public void addIntoInventory(Product product, Integer quantity){
         
@@ -122,6 +125,7 @@ public class Inventory implements Serializable{
 
         return log;
     }
+
 
 
     

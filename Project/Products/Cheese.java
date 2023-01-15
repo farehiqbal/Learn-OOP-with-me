@@ -12,14 +12,15 @@ public class Cheese extends Dairy{
         this.name = name;
     }
 
-    public Cheese(double _weight, Date date, double _price, String description){
+    public Cheese(String name,double _weight, Date date, double _price){
         super(_weight, date);
         this.price = _price;
-        this.description = description;
+        this.name = name;
     }
 
-    public Cheese(double _weight, double _price){
+    public Cheese(String name,double _weight, double _price){
         super(_weight,_price);
+        this.name = name;
     }
 
 

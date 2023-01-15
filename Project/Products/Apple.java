@@ -10,12 +10,15 @@ public class Apple extends Fruit{
     public Apple(String name){
         this.name = name;
     }
-    public Apple(double _weight, Date date, double _price){
+    public Apple(String name, double _weight, Date date, double _price){
         super(_weight, date);
         this.price = _price;
+        this.name = name;
     }
-    public Apple(double _weight, double _price){
+    public Apple(String name,double _weight, double _price){
         super(_weight,_price);
+        this.name = name;
+        
     }
 
     public String getDescription(){

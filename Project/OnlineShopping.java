@@ -76,6 +76,14 @@ public class OnlineShopping {
         return nearestStore;
     }
 
+    public String getTotalPrice(){
+        int total = 0;
+        for (Product product : cart.keySet()) {
+            total += product.getPrice() * cart.get(product);
+        }
+        return "Total Price: " + total;
+    }
+
     public void checkout() throws ClassNotFoundException, IOException{
         
         FileOperation<ArrayList<Store>> file = new FileOperation<>("Project\\DataBase\\Store");
@@ -95,7 +103,7 @@ public class OnlineShopping {
         
         ArrayList<Store> temp = file.pull();
         // System.out.println(temp.remove(oldcopy));
-        System.out.println(temp.add(nearestStore));
+        // System.out.println(temp.add(nearestStore));
 
         file.push(temp);
 

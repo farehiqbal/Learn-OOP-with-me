@@ -7,7 +7,8 @@ import javax.swing.*;
 public class CustomButton extends JButton{
     
     public CustomButton(){
-        setBackground(Color.LIGHT_GRAY);
+        setBackground(Color.DARK_GRAY);
+        setForeground(Color.WHITE);
         
         setFocusable(false);
     }

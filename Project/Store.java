@@ -7,6 +7,7 @@ import Project.FileHandling.FileOperation;
 import Project.Inventory.Inventory;
 import Project.Products.*;
 import Project.Users.Manager;
+import Project.Utils.Stringifies;
 
 public class Store implements Serializable{
     
@@ -20,6 +21,7 @@ public class Store implements Serializable{
 
     }
 
+    
     public Store(Manager manager, String location){
         
         this.manager = manager;
@@ -32,6 +34,10 @@ public class Store implements Serializable{
     }
     public Manager getManager(){
         return this.manager;
+    }
+
+    public Inventory getInventory(){
+        return this.inventory;
     }
 
     public void printStoreInventory() throws ClassNotFoundException, IOException{
@@ -120,20 +126,94 @@ public class Store implements Serializable{
         }
     }
 
-    @Override
-    public String toString() {
-        return "Store [file=" + file + ", location=" + location + ", inventory=" + inventory + ", manager=" + manager
-                + "]";
-    }
-
-    public static void main(String[] args) throws ClassNotFoundException, IOException {
-        
+    public static Store getStore(String location) throws ClassNotFoundException, IOException{
 
         FileOperation<ArrayList<Store>> file = new FileOperation<>("Project\\DataBase\\Store");
         
-        Manager manager = new Manager("Islamabad");
-        Store store1 = new Store(manager, "Islamabad");
-        Store store2 = new Store(new Manager("Faisalabad"), "Faisalabad");
+        ArrayList<Store> stores= file.pull();
+
+        for (Store store : stores) {
+            if(store.getLocation().equals(location)){
+                return store;
+            }
+        }
+        return null;
+    }
+
+    // private static Store findFromStore(String string) throws ClassNotFoundException, IOException {  
+        
+    //     FileOperation<ArrayList<Store>> file = new FileOperation<>("Project\\DataBase\\Store");
+
+    //     ArrayList<Store> list = file.pull();
+    //     Store maxStore = list.get(0);
+    //     Fish fish = new Fish("Fish");
+	//     for(int i = 1; i < list.size(); i++){
+    //         if(list.get(i).getInventory().getName("Fish") > maxStore.getInventory().getName("Fish")){
+    //             maxStore = list.get(i);
+    //         }
+    //     }
+
+    //     return maxStore;
+    // }
+
+    private static Store list(int i) {
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Store [location=" + location + "]";
+    }
+
+    public static void main(String[] args) throws ClassNotFoundException, IOException {
+        System.out.println(Store.findFromStore("Fish").toString());
+    
+        // Store maxStore = null;
+
+        // FileOperation<ArrayList<Store>> file = new FileOperation<>("Project\\DataBase\\Store");
+
+        // ArrayList<Store> list = file.pull();
+        // Fish fish = new Fish("Fish");
+        // for(Store i : list){
+        //     maxStore = list(0);
+        //     if(i.getInventory().getName("Fish") > maxStore.getInventory().getName("Fish")){
+        //         maxStore = i;
+        //     }
+        // }
+
+        // return maxStore;
+
+        // Store store = new Store();
+        // store.findFromStore(Fish.getName());
+
+        // FileOperation<ArrayList<Store>> file = new FileOperation<>("Project\\DataBase\\Store");
+        
+        // ArrayList<Store> list = file.pull();
+
+        // for (Store i : list) {
+        //     System.out.println(i);
+        //     Store.findFromStore(Fish.getName());
+        // }
+
+        // file.push(list);
+        
+        // for (Store i : list) {
+        //     System.out.println(i);
+        //     // Store.findFromStore(Fish.getName());
+        // }
+        
+
+
+
+        // Store.findFromStore(Product.getProduct());
+        //     if(i.getName().equals(_product.getName())){
+        //         return i;
+        //     }
+        // } 
+
+        // Manager manager = new Manager("Islamabad");
+        // Store store1 = new Store(manager, "Islamabad");
+        // Store store2 = new Store(new Manager("Faisalabad"), "Faisalabad");
         
         // store1.printStoreInventory();
         
@@ -154,10 +234,31 @@ public class Store implements Serializable{
         //     System.out.println(store.getManager().getLocation());
         // }
 
-        // Store.addNewStore(new Store(new Manager("Rawalpindi"), "Rawalpindi"));
-        // Store.addNewStore(new Store(new Manager("Lahore"), "Lahore"));
-        // Store.addNewStore(new Store(new Manager("Karachi"), "Karachi"));
+        // // Store.addNewStore(new Store(new Manager("Rawalpindi"), "Rawalpindi"));
+        // // Store.addNewStore(new Store(new Manager("Lahore"), "Lahore"));
+        // // Store.addNewStore(new Store(new Manager("Karachi"), "Karachi"));
 
-        Store.displayAllStores();
+        // // Store.displayAllStores();
+
+        // System.out.println(Stringifies.getStoreInventory(store1));
+    
+          // private static Store findFromStore(String string) throws ClassNotFoundException, IOException{
+                
+    //     Store maxStore = null;
+
+    //     FileOperation<ArrayList<Store>> file = new FileOperation<>("Project\\DataBase\\Store");
+
+    //     ArrayList<Store> list = file.pull();
+    //     Fish fish = new Fish("Fish");
+    //     for(Store i : list){
+    //         maxStore = list(0);
+    //         if(i.getInventory().getName("Fish") > maxStore.getInventory().getName("Fish")){
+    //             maxStore = i;
+    //         }
+    //     }
+
+    //     return maxStore;
+    // }
+    
     } 
 }

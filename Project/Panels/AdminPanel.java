@@ -49,7 +49,8 @@ public class AdminPanel extends JFrame{
         registerManagerButton.addActionListener(listener);
         manageCustomerButton.addActionListener(listener);
         productCatalogButton.addActionListener(listener);
-        viewManagerButton.addActionListener(listener);
+        // viewManagerButton.addActionListener(listener);
+        viewStoreButton.addActionListener(listener);
         addStoreButton.addActionListener(listener);
         logoutButton.addActionListener(listener);
 
@@ -74,6 +75,8 @@ public class AdminPanel extends JFrame{
                    
                     textArea.setFont(new Font("Arial", Font.PLAIN, 14));
                     textArea.setSize(550,400);
+                    textArea.setBackground(Color.DARK_GRAY);
+                    textArea.setForeground(Color.WHITE);
 
                     frame.add(textArea, BorderLayout.CENTER);
                     frame.setVisible(true);
@@ -110,10 +113,39 @@ public class AdminPanel extends JFrame{
 
             if(ev.getActionCommand().equals("View Stores")){
 
+                JFrame frame = new JFrame("Available Stores");
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setSize(350, 400);
+                frame.setLayout(new BorderLayout());
+
+                try {
+                    JTextArea textArea = new JTextArea();
+                    // textArea.setText("");
+                    textArea.setText(Stringifies.getStores());
+                    textArea.setEditable(false);
+                    
+                    textArea.setFont(new Font("Arial", Font.PLAIN, 14));
+                    textArea.setSize(350,400);
+                    textArea.setBackground(Color.DARK_GRAY);
+                    textArea.setForeground(Color.WHITE);
+
+                    frame.add(textArea, BorderLayout.CENTER);
+                    frame.setVisible(true);
+
+                } catch (ClassNotFoundException | IOException e) {
+                    e.printStackTrace();
+                }
+                
+                
+
             }
 
             if(ev.getActionCommand().equals("Add Store")){
-
+                try {
+                    AddStorePanel addStorePanel = new AddStorePanel();
+                } catch (ClassNotFoundException | IOException e) {
+                    e.printStackTrace();
+                }
             }
 
             if(ev.getActionCommand().equals("Logout")){

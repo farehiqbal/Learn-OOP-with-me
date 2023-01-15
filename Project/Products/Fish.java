@@ -12,14 +12,15 @@ public class Fish extends Meat{
         this.name = name;
     }
 
-    public Fish(double _weight, Date date, double _price, String description){
-       super(_weight, date);
+    public Fish(String name,double _weight, Date date, double _price){
+        super(_weight, date);
         this.price = _price;
-        this.description = description;
+        this.name= name;
     }
 
-    public Fish(double _weight, double _price){
+    public Fish(String name, double _weight, double _price){
         super(_weight,_price);
+        this.name = name;
     }
 
 

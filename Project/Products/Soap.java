@@ -10,9 +10,10 @@ public class Soap extends PersonalHygiene{
         this.name = name;
     }
 
-    Soap(double _price, String description){
+    public Soap(String name, double _weight, double _price){
+        this.weight = _weight;
         this.price = _price;
-        this.description = description;
+        this.name = name;
     }
     
     public Soap(double _weight, double _price){

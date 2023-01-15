@@ -12,15 +12,16 @@ public class Milk extends Dairy{
         this.name = name;
     }
 
-    public Milk(double _weight, Date date, double _price, String description){
+    public Milk(String name,double _weight, Date date, double _price){
         
         super(_weight, date);
         this.price = _price;
-        this.description = description;
+        this.name = name;
     }
 
-    public Milk(double _weight, double _price){
+    public Milk(String name,double _weight, double _price){
         super(_weight,_price);
+        this.name = name;
     }
 
     @Override

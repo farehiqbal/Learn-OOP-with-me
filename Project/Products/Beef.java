@@ -12,13 +12,15 @@ public class Beef extends Meat{
         this.name = name;
     }
     
-    public Beef(double _weight, Date date, double _price){
+    public Beef(String name, double _weight, Date date, double _price){
         super(_weight, date);
         this.price = _price;
+        this.name = name;
     }
 
-    public Beef(double _weight, double _price){
+    public Beef(String name,double _weight, double _price){
         super(_weight,_price);
+        this.name = name;
     }
 
     public String getDescription(){

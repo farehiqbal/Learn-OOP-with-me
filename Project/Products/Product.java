@@ -9,6 +9,13 @@ public abstract class Product implements Serializable{
     protected String description;
     protected double weight;
     
+    public Product(){
+        
+    }
+
+    public Product(String name) {
+        this.name = name;
+    }
     public double getPrice() {
         return price;
     }

@@ -8,14 +8,15 @@ import java.awt.event.*;
 import Project.Users.*;
 import Project.FileHandling.FileOperation;
 import Project.Utils.Stringifies;
+import Project.Components.*;
 
 public class ManageCustomers extends JFrame{
     
     JTextArea textArea;
     JPanel panel;
-    JLabel label;
-    JTextField field;
-    JButton button;
+    CustomLabel label;
+    CustomField  field;
+    CustomButton button;
 
     public ManageCustomers() throws ClassNotFoundException, IOException{
 
@@ -30,10 +31,17 @@ public class ManageCustomers extends JFrame{
         textArea.setEditable(false);
         textArea.setSize(550,400);
         textArea.setFont(new Font("Arial", Font.PLAIN, 14));
+        textArea.setBackground(Color.DARK_GRAY);
+        textArea.setForeground(Color.WHITE);
 
-        label = new JLabel("Enter Customer ID");
-        field = new JTextField();
-        button = new JButton("Delete Customer");
+        label = new CustomLabel("Enter Customer ID");
+        label.setBackground(Color.RED);
+        label.setForeground(Color.WHITE);
+
+        field = new CustomField();
+        button = new CustomButton("Delete Customer");
+        button.setBackground(Color.DARK_GRAY);
+        button.setForeground(Color.WHITE);
 
         panel = new JPanel(new GridLayout(1,1));
         panel.add(label);

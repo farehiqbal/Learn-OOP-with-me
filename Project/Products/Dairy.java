@@ -10,6 +10,7 @@ public class Dairy extends Food {
     public Dairy() {
         type = GoodsType.PERISHABLE;
     }
+    
 
     public Dairy(double weight, Date expiryDate){
         
